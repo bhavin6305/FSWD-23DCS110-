@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Panel - Tuition Class</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f2f4f7;
+        padding: 30px;
+      }
+      h1 {
+        text-align: center;
+        color: #222;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      th, td {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+      }
+      th {
+        background: #007bff;
+        color: white;
+      }
+      a, button {
+        text-decoration: none;
+        color: white;
+        background: #007bff;
+        padding: 8px 12px;
+        border-radius: 6px;
+        margin: 2px;
+        border: none;
+        cursor: pointer;
+      }
+      a:hover, button:hover {
+        background: #0056b3;
+      }
+      .add-btn {
+        display: inline-block;
+        background: #28a745;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tuition Class - Admin Panel</h1>
+    <a href="/add" class="add-btn">➕ Add New Student</a>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Roll No</th>
+        <th>Course</th>
+        <th>Contact</th>
+        <th>Actions</th>
+      </tr>
+      <% students.forEach(student => { %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.rollNo %></td>
+        <td><%= student.course %></td>
+        <td><%= student.contact %></td>
+        <td>
+          <a href="/edit/<%= student._id %>">✏️ Edit</a>
+          <a href="/delete/<%= student._id %>" onclick="return confirm('Delete this student?')">🗑️ Delete</a>
+        </td>
+      </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>

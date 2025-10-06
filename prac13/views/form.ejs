@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tax Form - Income Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
+      width: 350px;
+      text-align: center;
+    }
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      text-align: center;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧾 Tax Form</h1>
+    <form action="/submit" method="POST">
+      <label>Income Source 1</label>
+      <input type="text" name="source1" required />
+
+      <label>Income Source 2</label>
+      <input type="text" name="source2" required />
+
+      <button type="submit">Calculate Total</button>
+    </form>
+
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <% if (result !== null) { %>
+      <p class="result">💰 Total Income: <%= result %></p>
+    <% } %>
+  </div>
+</body>
+</html>

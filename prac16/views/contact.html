@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact Me | Freelance Portfolio</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #1f4037, #99f2c8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      form {
+        background: white;
+        padding: 40px 35px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        width: 380px;
+        text-align: center;
+      }
+      h2 {
+        margin-bottom: 20px;
+        color: #1f4037;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 12px 15px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 15px;
+        transition: all 0.3s ease;
+      }
+      input:focus,
+      textarea:focus {
+        border-color: #1f4037;
+        outline: none;
+        box-shadow: 0 0 6px rgba(31, 64, 55, 0.3);
+      }
+      textarea {
+        height: 100px;
+        resize: none;
+      }
+      button {
+        background: linear-gradient(90deg, #11998e, #38ef7d);
+        color: white;
+        border: none;
+        padding: 12px;
+        width: 100%;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      button:hover {
+        background: linear-gradient(90deg, #38ef7d, #11998e);
+        transform: translateY(-2px);
+      }
+      .footer-text {
+        margin-top: 15px;
+        font-size: 13px;
+        color: #555;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/send" method="POST">
+      <h2>📩 Contact Me</h2>
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea
+        name="message"
+        placeholder="Type your message..."
+        required
+      ></textarea>
+      <button type="submit">Send Message</button>
+      <p class="footer-text">I’ll get back to you soon 👋</p>
+    </form>
+  </body>
+</html>
